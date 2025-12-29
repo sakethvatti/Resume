@@ -8,26 +8,27 @@
 */
 
 :root{
-  /* Color system (light mode) */
-  --page-bg: #F8FAFC; /* light neutral */
+  /* Desktop-first color & layout */
+  --page-bg: #F8FAFC;
   --surface: #FFFFFF;
   --muted: #6B7280;
-  --accent: #2563EB; /* blue-600 */
-  --text: #0F172A; /* primary text */
+  --accent: #2563EB;
+  --text: #0F172A;
   --border: #E6E9EF;
   --radius: 12px;
 
-  /* Layout */
-  --max-width: 1100px;
+  /* Desktop layout */
+  --max-width: 1200px;
+  --side-padding-lg: 48px; /* desktop side padding */
+  --side-padding-md: 32px;
   --side-padding-sm: 18px;
-  --side-padding-lg: 36px;
 
-  /* Typography scale (mobile-first) */
-  --fs-body: 16px;
-  --lh-body: 1.6;
-  --fs-h1: 40px;
-  --fs-h2: 28px;
-  --fs-h3: 20px;
+  /* Typography (desktop-first) */
+  --fs-body: 17px;
+  --lh-body: 1.65;
+  --fs-h1: 48px;
+  --fs-h2: 32px;
+  --fs-h3: 22px;
 }
 
 *{box-sizing:border-box}
@@ -44,7 +45,7 @@ body{
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 
 
-.site-header{padding:18px var(--side-padding-sm);text-align:center}
+.site-header{padding:22px var(--side-padding-md);text-align:center}
 .nav{background:transparent;border-bottom:1px solid transparent}
 .nav-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:8px}
 .nav-list{list-style:none;padding:0;margin:0;display:flex;gap:12px}
@@ -56,43 +57,70 @@ body{
 .btn:focus{outline:2px solid rgba(37,99,235,0.15)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(15,23,42,0.06)}
 
-.hero{max-width:var(--max-width);margin:12px auto 18px;padding:0 var(--side-padding-sm)}
-.name{font-size:26px;margin:0;font-weight:700}
+.hero{max-width:var(--max-width);margin:18px auto 20px;padding:0 var(--side-padding-md)}
+.name{font-size:var(--fs-h1);margin:0;line-height:1}
 .meta{color:var(--muted);margin-top:6px}
 
-.site-main .wrap{max-width:var(--max-width);margin:0 auto;padding:12px var(--side-padding-sm)}
+.site-main .wrap{max-width:var(--max-width);margin:0 auto;padding:18px var(--side-padding-md)}
 
 /* Card base */
 .card{
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:16px;
-  box-shadow:0 6px 18px rgba(15,22,40,0.04);
-  margin-bottom:18px;
+  padding:20px;
+  box-shadow:0 8px 24px rgba(15,22,40,0.04);
+  margin-bottom:20px;
 }
-.card-title{margin:0 0 10px 0;font-size:18px}
+.card-title{margin:0 0 12px 0;font-size:var(--fs-h3);font-weight:600}
 
-.grid{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
+.grid{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
 .sidebar .card{padding:12px}
 
 .project{margin-bottom:12px}
-.project-title{margin:0;font-size:15px}
-.muted{color:var(--muted);font-size:13px;margin-left:8px}
-.tech{color:var(--muted);font-size:13px;margin-top:8px}
+.project-title{margin:0;font-size:18px}
+.muted{color:var(--muted);font-size:14px;margin-left:8px}
+.tech{color:var(--muted);font-size:14px;margin-top:10px}
 
-.skill-grid{display:flex;gap:12px;flex-wrap:wrap}
-.skill-grid ul{padding-left:18px;margin:6px 0;min-width:140px}
+.skill-grid{display:flex;gap:16px;flex-wrap:wrap}
+.skill-grid ul{padding-left:18px;margin:8px 0;min-width:160px}
 .list{padding-left:18px;margin:6px 0}
 
 .signature{text-align:right;font-weight:600}
 
 /* Desktop layout: two-column content with sidebar */
-@media (min-width:960px){
-  .grid{grid-template-columns:1fr 340px}
-  .site-header{padding:20px var(--side-padding-lg)}
-  .site-main .wrap{padding:20px var(--side-padding-lg)}
-  .name{font-size:40px}
+/* Desktop: two-column layout */
+@media (min-width:1000px){
+  .grid{grid-template-columns:1fr 360px}
+  .site-header{padding:28px var(--side-padding-lg)}
+  .site-main .wrap{padding:24px var(--side-padding-lg)}
+  .name{font-size:var(--fs-h1)}
+}
+
+/* Tablet and mobile: scale down for smaller viewports */
+@media (max-width:999px){
+  :root{
+    --side-padding-md: 24px;
+    --fs-h1: 40px;
+    --fs-h2: 28px;
+    --fs-h3: 18px;
+    --fs-body: 16px;
+  }
+  .site-header{padding:18px var(--side-padding-md)}
+  .site-main .wrap{padding:16px var(--side-padding-md)}
+}
+
+@media (max-width:640px){
+  :root{
+    --side-padding-md: 16px;
+    --fs-h1: 32px;
+    --fs-h2: 22px;
+    --fs-h3: 16px;
+    --fs-body: 15px;
+  }
+  .grid{grid-template-columns:1fr}
+  .nav-inner{flex-direction:column;gap:8px}
+  .nav-list{flex-wrap:wrap;justify-content:center}
 }
 
 /* Print styles: remove color, shadows and hide UI buttons */
