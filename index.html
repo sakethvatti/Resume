@@ -5,89 +5,119 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Vatti Arogya Saketh — Resume</title>
     <meta name="description" content="Resume of Vatti Arogya Saketh — B.Tech CSE, ML & Full Stack Developer" />
+    <!-- Prefer Inter for a crisp UI, fall back to system fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div>
-          <h1>Vatti Arogya Saketh</h1>
-          <p class="sub">Hyderabad, Telangana &nbsp; | &nbsp; <a href="mailto:saketh.hsm@gmail.com">saketh.hsm@gmail.com</a></p>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-inner">
+          <ul class="nav-list">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#objective">Objective</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#interests">Interests</a></li>
+          </ul>
+          <div class="nav-actions">
+            <button id="printBtn" class="btn small">Print / PDF</button>
+            <button id="themeBtn" class="btn small" aria-pressed="false">Toggle Theme</button>
+          </div>
         </div>
-        <div class="actions">
-          <button id="printBtn" title="Print or save as PDF">Download / Print</button>
-          <button id="themeBtn" title="Toggle theme">Toggle Theme</button>
-        </div>
-      </header>
+      </nav>
 
-      <main>
-        <section class="card objective">
-          <h2>Objective</h2>
+      <div id="header" class="hero">
+        <h1 class="name">Vatti Arogya Saketh</h1>
+        <p class="meta">Hyderabad, Telangana &nbsp; | &nbsp; <a href="mailto:saketh.hsm@gmail.com">saketh.hsm@gmail.com</a></p>
+      </div>
+    </header>
+
+  <main id="main" class="site-main">
+      <div class="wrap">
+        <!-- Objective -->
+        <section id="objective" class="card">
+          <h2 class="card-title">Objective</h2>
           <p>
-            Motivated and technically strong B.Tech Computer Science student with hands-on experience in Machine Learning, Full Stack Development, and cloud-based solutions. Seeking an entry-level Software Development Engineer (SDE-I) role at Amazon to apply problem-solving, coding, and analytical skills in building scalable systems.
+            Motivated and technically strong B.Tech Computer Science student with hands-on experience in Machine Learning, Full Stack Development, and cloud-based solutions. Seeking an entry-level Software Development Engineer (SDE‑I) role at Amazon to apply problem-solving, coding, and analytical skills in building scalable systems.
           </p>
         </section>
 
+        <!-- Experience / Summary (brief) -->
+        <section id="summary" class="card">
+          <h2 class="card-title">Summary</h2>
+          <p>Currently completing B.Tech (CSE) with practical experience building machine learning models and full-stack prototypes. Strong fundamentals in algorithms, data structures, and cloud-based services. Available for internships and entry-level SDE roles.</p>
+        </section>
+
         <div class="grid">
-          <section class="card">
-            <h2>Projects</h2>
+          <section id="projects" class="card">
+            <h2 class="card-title">Projects</h2>
+
             <article class="project">
-              <h3>Forecasting Agricultural Commodity Price <span class="date">December 2023</span></h3>
-              <ul>
-                <li>Implemented a Deep learning solution to predict prices of agricultural commodities based on historical data. Leveraged Decision Tree, SVM, and Random Forest algorithms, and used FastAPI for backend services to ensure seamless data processing and model access.</li>
-                <li>Technologies: Python, HTML, CSS, Machine Learning, FastAPI, Deep Learning</li>
-              </ul>
+              <h3 class="project-title">Forecasting Agricultural Commodity Price <span class="muted">— December 2023</span></h3>
+              <p>Implemented a deep learning solution to predict agricultural commodity prices using historical data. Leveraged Decision Tree, SVM and Random Forest models and exposed a FastAPI backend for model access and data processing.</p>
+              <p class="tech">Technologies: Python, FastAPI, Machine Learning, Deep Learning</p>
             </article>
 
             <article class="project">
-              <h3>Score Insight Prediction <span class="date">October 2023</span></h3>
-              <ul>
-                <li>Used machine learning to predict credit scores, identifying key factors like income and credit history. Helped design a data-driven tool for better risk assessment and lending decisions.</li>
-                <li>Technologies: HTML, CSS, JavaScript, React, MongoDB</li>
-              </ul>
+              <h3 class="project-title">Score Insight Prediction <span class="muted">— October 2023</span></h3>
+              <p>Built a credit-score prediction pipeline that identifies key factors impacting score predictions to support lending decisions and risk assessment.</p>
+              <p class="tech">Technologies: React, JavaScript, MongoDB, Machine Learning</p>
             </article>
           </section>
 
-          <aside class="card side">
-            <h2>Skills</h2>
-            <ul>
-              <li><strong>Languages:</strong> Python (Pandas, NumPy, SciPy, Matplotlib), HTML, JavaScript</li>
-              <li><strong>CS:</strong> OOPS, DSA, OS, DBMS</li>
-              <li><strong>Databases:</strong> MS SQL Server</li>
-              <li><strong>BI & Visualization:</strong> PowerBI, Tableau, MS Excel (Pivot, VLOOKUP, XLOOKUP)</li>
-              <li><strong>Cloud:</strong> AWS services</li>
-              <li><strong>ML / DL:</strong> Decision Trees, SVM, Random Forest, FastAPI</li>
-            </ul>
+          <aside class="card sidebar">
+            <section id="skills">
+              <h2 class="card-title">Skills</h2>
+              <div class="skill-grid">
+                <ul>
+                  <li><strong>Languages</strong>: Python, HTML, JavaScript</li>
+                  <li><strong>Libraries</strong>: Pandas, NumPy, SciPy, Matplotlib</li>
+                  <li><strong>CS</strong>: OOP, DSA, OS, DBMS</li>
+                </ul>
+                <ul>
+                  <li><strong>Databases</strong>: MS SQL Server, MongoDB</li>
+                  <li><strong>BI</strong>: PowerBI, Tableau, Excel</li>
+                  <li><strong>Cloud</strong>: AWS services</li>
+                </ul>
+              </div>
+            </section>
 
-            <h2>Certifications</h2>
-            <ul>
-              <li>Python basics — Great Learning</li>
-              <li>Data Science and Analytics — HP</li>
-              <li>Data Visualization using Power BI — Great Learning</li>
-            </ul>
+            <section id="certifications">
+              <h2 class="card-title">Certifications</h2>
+              <ul class="list">
+                <li>Python basics — Great Learning</li>
+                <li>Data Science & Analytics — HP</li>
+                <li>Data Visualization with Power BI — Great Learning</li>
+              </ul>
+            </section>
 
-            <h2>Education</h2>
-            <ul>
-              <li><strong>Malla Reddy University</strong>, Hyderabad — B.Tech (CSE) (2025)</li>
-              <li><strong>Narayana Junior College</strong>, Hyderabad — Board of Intermediate – MPC (2021)</li>
-              <li><strong>Bhashyam Brooks The Formula School</strong> — Secondary School – CBSE (2019)</li>
-            </ul>
-
-            <h2>Interests</h2>
-            <p>Playing chess, physical games, organizing events, analyzing situations.</p>
+            <section id="education">
+              <h2 class="card-title">Education</h2>
+              <ul class="list">
+                <li><strong>Malla Reddy University</strong>, Hyderabad — B.Tech (CSE), 2025</li>
+                <li><strong>Narayana Junior College</strong>, Hyderabad — Intermediate (MPC), 2021</li>
+                <li><strong>Bhashyam Brooks The Formula School</strong> — Secondary (CBSE), 2019</li>
+              </ul>
+            </section>
           </aside>
         </div>
 
-        <section class="card footnote">
-          <p class="place">Place: Hyderabad</p>
-          <p class="signature">Vatti Arogya Saketh</p>
+        <section id="interests" class="card">
+          <h2 class="card-title">Interests</h2>
+          <p>Playing chess, physical games, organizing events, analyzing situations.</p>
         </section>
-      </main>
 
-      <footer class="footer">
-        <p>Resume generated as a static page — ready for GitHub Pages.</p>
-      </footer>
-    </div>
+        <footer class="signature card">
+          <p class="place">Place: Hyderabad</p>
+          <p class="signed">Vatti Arogya Saketh</p>
+        </footer>
+      </div>
+    </main>
 
     <script src="script.js"></script>
   </body>
